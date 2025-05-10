@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clases\Conexion.cs" />
+    <Compile Include="clases\GestionProducto.cs" />
     <Compile Include="clases\Productos.cs" />
     <Compile Include="Ejercicio1.aspx.cs">
       <DependentUpon>Ejercicio1.aspx</DependentUpon>
