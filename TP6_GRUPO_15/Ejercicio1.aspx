@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-            <asp:GridView ID="GridView1" runat="server" BorderColor="#0066CC" BorderStyle="Solid" ShowFooter="True" Width="524px">
+            <asp:GridView ID="gvProductos" runat="server" BorderColor="#0066CC" BorderStyle="Solid" ShowFooter="True" Width="524px" AllowPaging="True" OnPageIndexChanging="gvProductos_PageIndexChanging" >
                 <AlternatingRowStyle BorderColor="#0066CC" BorderStyle="Solid" ForeColor="#0066CC" />
                 <FooterStyle BackColor="#669999" BorderColor="#0066CC" BorderStyle="Solid" ForeColor="#0099CC" />
                 <HeaderStyle BackColor="#000099" ForeColor="#9999FF" />
