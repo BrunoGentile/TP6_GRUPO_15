@@ -6,13 +6,26 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TP6_GRUPO_15.clases;
 
+//(Convert.ToInt32(idProducto));
+
 namespace TP6_GRUPO_15
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack == false)
+            {
+                CargarGridView();
+            }
+        }
 
+        // CARGAR GRIDVIEW
+        private void CargarGridView()
+        {
+            GestionProducto gestionProductos = new GestionProducto();
+            gvProductos.DataSource = gestionProductos.ObtenerTodosLosProductos(); /// DATA TABLE
+            gvProductos.DataBind();
         }
 
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -26,9 +39,14 @@ namespace TP6_GRUPO_15
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_idProducto")).Text;
 
             // CREAR PRODUCTO
-            Productos producto = new Productos(Convert.ToInt32(idProducto));
+            Productos producto = new Productos();
+                
 
-            GestionProducto gestion
+            //ELIMINAR PRODUCTO
+            GestionProducto gestionProducto = new GestionProducto();
+            gestionProducto.EliminarProducto(producto);
+
+            CargarGridView();
         }
     }
 }
