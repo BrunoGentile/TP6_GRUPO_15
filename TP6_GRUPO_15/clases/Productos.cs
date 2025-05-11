@@ -7,6 +7,7 @@ namespace TP6_GRUPO_15.clases
 {
     public class Productos
     {
+       
         //PROPIEDADES 
        private int _Id;
        private string _Nombre_Producto;
@@ -27,8 +28,7 @@ namespace TP6_GRUPO_15.clases
             _Precio_Unidad=Precio_Unidad;
         }
 
-        //Metodos setters y getter
-
+        // SETTERS Y GETTERS
         public int Id
         {
             get { return _Id; }

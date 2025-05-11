@@ -19,9 +19,12 @@ namespace TP6_GRUPO_15.clases
         private DataTable ObtenerTabla(string nombreTabla, string consultaSQL)
         {
             DataSet dataSet = new DataSet();
-            AccesoDatos datos = new AccesoDatos();
+            Conexion datos = new Conexion();
+            
             SqlDataAdapter sqlDataAdapter = datos.ObtenerAdaptador(consultaSQL);
+            
             sqlDataAdapter.Fill(dataSet, nombreTabla);
+
             return dataSet.Tables[nombreTabla];
         }
 
@@ -59,8 +62,11 @@ namespace TP6_GRUPO_15.clases
         {
             SqlCommand sqlCommand = new SqlCommand();
             ArmarParametrosProductosEliminar(ref sqlCommand, producto);
-            AccesoDatos aceesoDatos = new AccesoDatos();
-            int FilasInsertadas = aceesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarProducto");
+
+            Conexion accesoDatos = new Conexion();
+
+            int FilasInsertadas = accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarProducto");
+
             if (FilasInsertadas == 1)
             {
                 return true;

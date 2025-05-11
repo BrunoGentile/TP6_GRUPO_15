@@ -31,7 +31,7 @@ namespace TP6_GRUPO_15
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvProductos.PageIndex = e.NewPageIndex;
-            
+            CargarGridView();
         }
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -41,7 +41,6 @@ namespace TP6_GRUPO_15
             // CREAR PRODUCTO
             Productos producto = new Productos();
                 
-
             //ELIMINAR PRODUCTO
             GestionProducto gestionProducto = new GestionProducto();
             gestionProducto.EliminarProducto(producto);
