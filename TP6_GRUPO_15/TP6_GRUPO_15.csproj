@@ -70,6 +70,7 @@
     <Content Include="Ejercicio1.aspx" />
     <Content Include="Ejercicio2Inicio.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="MostrarP.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarP.aspx.cs">
+      <DependentUpon>MostrarP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarP.aspx.designer.cs">
+      <DependentUpon>MostrarP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
