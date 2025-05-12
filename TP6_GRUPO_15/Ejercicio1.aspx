@@ -20,6 +20,13 @@
         .auto-style4 {
             height: 23px;
         }
+        .auto-style5 {
+            width: 558px;
+            height: 40px;
+        }
+        .auto-style6 {
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -27,14 +34,14 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style5">
                         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Productos"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -52,6 +59,7 @@
                     <asp:TemplateField HeaderText="Nombre Producto">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_eit_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvNombreProducto" runat="server" ControlToValidate="txt_eit_NombreProducto">Ingrese un nombre de producto</asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_NombreProducto" runat="server" Text='<%# Bind("nombreProducto") %>'></asp:Label>
@@ -60,6 +68,7 @@
                     <asp:TemplateField HeaderText="Cantidad por Unidad">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_eit_Cantx_Unidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvCantidadxUnidad" runat="server" ControlToValidate="txt_eit_Cantx_Unidad">Ingrese la cantidad por unidad</asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_CantidadPorUnidad" runat="server" Text='<%# Bind("cantidadPorUnidad") %>'></asp:Label>
@@ -68,6 +77,7 @@
                     <asp:TemplateField HeaderText="Precio por Unidad">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_eit_PrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPrecioxUnidad" runat="server" ControlToValidate="txt_eit_PrecioUnidad">Ingrese el precio por unidad</asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_PrecioPorUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
@@ -94,7 +104,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>

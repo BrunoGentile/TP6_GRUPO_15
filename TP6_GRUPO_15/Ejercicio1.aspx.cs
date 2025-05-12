@@ -59,7 +59,8 @@ namespace TP6_GRUPO_15
 
         protected void gvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-               
+            gvProductos.EditIndex = -1; // SE DA UN INDICE INEXISTENTE PARA CANCELAR LA EDICIÓN
+            CargarGridView();
         }
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
