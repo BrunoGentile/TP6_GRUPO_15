@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace TP6_GRUPO_15.clases
 {
@@ -51,6 +52,24 @@ namespace TP6_GRUPO_15.clases
             SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
         }
 
+        // MÉTODO PARA ACTUALIZAR PRODUCTO EN LA BASE DE DATOS
+        public void ActualizarProducto(Productos producto)
+        {
+            // ESTABLECER CONEXIÓN A BASE DE DATOS SQL SERVER
+            Conexion conexion = new Conexion();
 
+            // CONSULTA DML ( INSERT INTO [MODIFICACIÓN TABLA SQL] )
+            string ConsultaSQL = "UPDATE Productos SET NombreProducto = @nombre, CantidadPorUnidad = @cantidad, PrecioUnidad = @precio WHERE idProducto = @id";
+
+            SqlCommand SQLCommand = new SqlCommand(ConsultaSQL, conexion.ObtenerConexion());
+
+            SQLCommand.Parameters.AddWithValue("@id", producto.Id);
+            SQLCommand.Parameters.AddWithValue("@nombre", producto.Nombre_Producto);
+            SQLCommand.Parameters.AddWithValue("@cantidad", producto.Cant_x_Unidad);
+            SQLCommand.Parameters.AddWithValue("@precio", producto.Precio_Unidad);
+
+            // EJECUTAR CONSULTA
+            SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
+        }
     }
 }

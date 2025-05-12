@@ -64,7 +64,21 @@ namespace TP6_GRUPO_15
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            
+            // BUSCAR FILA DENTRO DEL EDIT ITEM TEMPLATE
+            string IDProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_IdProducto")).Text;
+            string NombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_eit_NombreProducto")).Text;
+            string CantXUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_eit_Cantx_Unidad")).Text;
+            string PrecioXUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_eit_PrecioUnidad")).Text;
+
+            // CREAR PRODUCTO
+            Productos producto = new Productos(Convert.ToInt32(IDProducto), NombreProducto, CantXUnidad, Convert.ToDecimal(PrecioXUnidad));
+
+            // ACTUALIZAR PRODUCTO
+            GestionProducto gestionProducto = new GestionProducto();
+
+            gestionProducto.ActualizarProducto(producto);
+            gvProductos.EditIndex = -1;
+            CargarGridView();
         }
     }
 }
