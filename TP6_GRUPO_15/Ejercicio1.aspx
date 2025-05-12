@@ -78,6 +78,9 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_eit_PrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvPrecioxUnidad" runat="server" ControlToValidate="txt_eit_PrecioUnidad">Ingrese el precio por unidad</asp:RequiredFieldValidator>
+                            <br />
+                            <asp:CompareValidator ID="cvPrecioxUnidad" runat="server" ControlToValidate="txt_eit_PrecioUnidad" Operator="GreaterThan" ValueToCompare="0">El precio debe ser mayor a 0</asp:CompareValidator>
+                            <br />
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_PrecioPorUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
