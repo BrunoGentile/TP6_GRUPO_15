@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:GridView ID="gvProductosSeleccionados" runat="server">
+                        <asp:GridView ID="gvProductosSeleccionados" runat="server" AllowPaging="True" OnPageIndexChanging="gvProductosSeleccionados_PageIndexChanging" PageSize="14">
                         </asp:GridView>
                     </td>
                     <td class="auto-style2">&nbsp;</td>
