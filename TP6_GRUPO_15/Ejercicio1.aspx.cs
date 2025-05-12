@@ -48,5 +48,23 @@ namespace TP6_GRUPO_15
             // REFRESCAR GRIDVIEW PARA VISUALIZAR LA MODIFICACIÓN
             CargarGridView();
         }
+
+        //MÉTODO PARA RECARGAR EL GV LUEGO DE CLICKEAR EDITAR
+        protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvProductos.EditIndex = e.NewEditIndex;
+            CargarGridView();
+        }
+
+
+        protected void gvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+               
+        }
+
+        protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            
+        }
     }
 }

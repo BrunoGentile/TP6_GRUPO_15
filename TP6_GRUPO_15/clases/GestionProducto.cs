@@ -50,5 +50,7 @@ namespace TP6_GRUPO_15.clases
             // EJECUTAR CONSULTA
             SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
         }
+
+
     }
 }
