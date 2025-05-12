@@ -71,6 +71,7 @@
     <Content Include="Ejercicio2Inicio.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="MostrarP.aspx" />
+    <Content Include="SeleccionarP.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +107,13 @@
       <DependentUpon>MostrarP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleccionarP.aspx.cs">
+      <DependentUpon>SeleccionarP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarP.aspx.designer.cs">
+      <DependentUpon>SeleccionarP.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
