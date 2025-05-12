@@ -9,10 +9,10 @@ namespace TP6_GRUPO_15.clases
     {
        
         //PROPIEDADES 
-       private int _Id;
-       private string _Nombre_Producto;
-       private string _Cant_x_Unidad;
-       private decimal _Precio_Unidad;
+        private int _Id;
+        private string _Nombre_Producto;
+        private string _Cant_x_Unidad;
+        private decimal _Precio_Unidad;
 
         //CONSTRUCTORES
         public Productos() 

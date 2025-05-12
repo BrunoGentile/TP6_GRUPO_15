@@ -14,35 +14,38 @@ namespace TP6_GRUPO_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack == false)
+            if ( Page.IsPostBack == false )
             {
                 CargarGridView();
             }
         }
 
-        // CARGAR GRIDVIEW
+        // MÉTODO UTILIZADO PARA "MOSTRAR" EL GRIDVIEW ( USARSE SIEMPRE MOSTRAR MODIFICACIONES )
         private void CargarGridView()
         {
             GestionProducto gestionProductos = new GestionProducto();
-            gvProductos.DataSource = gestionProductos.ObtenerTodosLosProductos(); /// DATA TABLE
+            gvProductos.DataSource = gestionProductos.ObtenerTodosLosProductos(); // RETORNA UN DataTable
             gvProductos.DataBind();
         }
 
+        // MÉTODO UTILIZADO PARA LA PÁGINACIÓN DEL GRIDVIEW
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvProductos.PageIndex = e.NewPageIndex;
             CargarGridView();
         }
 
+        // MÉTODO UTILIZADO PARA BORRAR PRODUCTO SELECCIONADO
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            // OBTENCIÓN DEL ID DEL PRODUCTO A ELIMINAR
             int idProducto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_idProducto")).Text);
                 
-            //ELIMINAR PRODUCTO
+            // ELIMINACIÓN DEL PRODUCTO
             GestionProducto gestionProducto = new GestionProducto();
-            
             gestionProducto.EliminarProducto( idProducto );
 
+            // REFRESCAR GRIDVIEW PARA VISUALIZAR LA MODIFICACIÓN
             CargarGridView();
         }
     }

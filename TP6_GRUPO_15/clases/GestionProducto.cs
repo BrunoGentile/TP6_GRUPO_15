@@ -16,6 +16,7 @@ namespace TP6_GRUPO_15.clases
 
         }
 
+        // OBTENGO "DataTable" CON LOS CAMPOS PEDIDOS EN "consultaSQL"
         private DataTable ObtenerTabla(string nombreTabla, string consultaSQL)
         {
             DataSet dataSet = new DataSet();
@@ -33,56 +34,21 @@ namespace TP6_GRUPO_15.clases
             return ObtenerTabla("productos", "SELECT * FROM Productos");
         }
 
-        public GestionProducto(int ID, string NombreProducto, string Cant_X_Unidad, decimal Precio_X_Unidad)
+        // MÉTODO UTILIZADO PARA ELIMINAR LOS PRODUCTOS DE LA BASE DE DATOS
+        public void EliminarProducto(int IDProducto)
         {
-         
-        }
-
-        private void ArmarParametrosProductosEliminar(ref SqlCommand Comando, Productos productos)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IdProducto", System.Data.SqlDbType.Int);
-            SqlParametros.Value = productos.Id;
-        }
-
-        private void ArmarParametrosProductos(ref SqlCommand Comando, Productos Producto)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Id", System.Data.SqlDbType.Int);
-            SqlParametros.Value = Producto.Id;
-            SqlParametros = Comando.Parameters.Add("@Nombre_Producto", System.Data.SqlDbType.Int);
-            SqlParametros.Value = Producto.Nombre_Producto;
-            SqlParametros = Comando.Parameters.Add("@CantidadPorUnidad", System.Data.SqlDbType.Int);
-            SqlParametros.Value = Producto.Cant_x_Unidad;
-            SqlParametros = Comando.Parameters.Add("@PrecioUnidad", System.Data.SqlDbType.Int);
-            SqlParametros.Value = Producto.Precio_Unidad;
-        }
-
-        public bool EliminarProducto(int IDProducto)
-        {
-
             // ESTABLECER CONEXIÓN A BASE DE DATOS SQL SERVER
             Conexion conexion = new Conexion();
 
-            // ESTABLEZCO CONSULTA SQL QUE SE DESEA EJECUTAR
+            // ESTABLEZCO CONSULTA SQL QUE SE DESEA EJECUTAR ( ELIMINACIÓN POR ID )
             string ConsultaSQL = "DELETE FROM Productos WHERE IdProducto = " + IDProducto;
 
             SqlCommand SQLCommand = new SqlCommand();
-            SQLCommand.CommandText = ConsultaSQL;
-            SQLCommand.Connection = conexion.ObtenerConexion();
+            SQLCommand.CommandText = ConsultaSQL; // ESTABLEZCO CONSULTA
+            SQLCommand.Connection = conexion.ObtenerConexion(); // ESTABLEZCO CONEXIÓN
 
             // EJECUTAR CONSULTA
-            int FilasInsertadas = SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
-
-            if (FilasInsertadas == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
+            SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
         }
     }
 }

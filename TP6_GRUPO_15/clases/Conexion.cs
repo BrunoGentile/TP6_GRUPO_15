@@ -50,34 +50,5 @@ namespace TP6_GRUPO_15.clases
             }
         }
 
-        // RECIBE EL SQLCONNECTION ABIERTO EN EL MÉTODO ABRIR CONEXIÓN Y LO CIERRA
-        public void CerrarConexion(SqlConnection conexion)
-        {
-            if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
-            {
-                conexion.Close();
-            }
-        }
-
-        // EJECUTAR EL PROCEDIMIENTO ALMACENADO
-        public int EjecutarProcedimientoAlmacenado(SqlCommand comandoSQL, string nombreProcedimientoAlmacenado) //comandoSQL recibe tiene los parametros incluidos
-        {
-            int FilasCambiadas;
-
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand = comandoSQL;
-
-            sqlCommand.Connection = Conexion;
-            sqlCommand.CommandType = CommandType.StoredProcedure;   /// INDICO QUE SE TRATA DE UN PROCEDIMIENTO ALMACENADO
-            sqlCommand.CommandText = nombreProcedimientoAlmacenado; /// INDICO EL NOMBRE DEL PROCEDIMIENTO ALMACENADO
-            FilasCambiadas = sqlCommand.ExecuteNonQuery();          /// EJECUTO EL PROCEDIMIENTO ALMACENADO
-
-            Conexion.Close();
-
-            return FilasCambiadas;
-        }
-
     }
 }
