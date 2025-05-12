@@ -36,14 +36,12 @@ namespace TP6_GRUPO_15
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_idProducto")).Text;
-
-            // CREAR PRODUCTO
-            Productos producto = new Productos();
+            int idProducto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_idProducto")).Text);
                 
             //ELIMINAR PRODUCTO
             GestionProducto gestionProducto = new GestionProducto();
-            gestionProducto.EliminarProducto(producto);
+            
+            gestionProducto.EliminarProducto( idProducto );
 
             CargarGridView();
         }

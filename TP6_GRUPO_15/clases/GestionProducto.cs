@@ -58,14 +58,21 @@ namespace TP6_GRUPO_15.clases
             SqlParametros.Value = Producto.Precio_Unidad;
         }
 
-        public bool EliminarProducto(Productos producto)
+        public bool EliminarProducto(int IDProducto)
         {
-            SqlCommand sqlCommand = new SqlCommand();
-            ArmarParametrosProductosEliminar(ref sqlCommand, producto);
 
-            Conexion accesoDatos = new Conexion();
+            // ESTABLECER CONEXIÓN A BASE DE DATOS SQL SERVER
+            Conexion conexion = new Conexion();
 
-            int FilasInsertadas = accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarProducto");
+            // ESTABLEZCO CONSULTA SQL QUE SE DESEA EJECUTAR
+            string ConsultaSQL = "DELETE FROM Productos WHERE IdProducto = " + IDProducto;
+
+            SqlCommand SQLCommand = new SqlCommand();
+            SQLCommand.CommandText = ConsultaSQL;
+            SQLCommand.Connection = conexion.ObtenerConexion();
+
+            // EJECUTAR CONSULTA
+            int FilasInsertadas = SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
 
             if (FilasInsertadas == 1)
             {
@@ -75,6 +82,7 @@ namespace TP6_GRUPO_15.clases
             {
                 return false;
             }
+
         }
     }
 }
