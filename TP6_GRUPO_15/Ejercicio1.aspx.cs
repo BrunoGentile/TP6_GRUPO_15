@@ -16,6 +16,7 @@ namespace TP6_GRUPO_15
         {
             if ( Page.IsPostBack == false )
             {
+                Session["orden"] = "ASC"; // Orden por defecto
                 CargarGridView();
             }
         }
@@ -23,8 +24,10 @@ namespace TP6_GRUPO_15
         // MÉTODO UTILIZADO PARA "MOSTRAR" EL GRIDVIEW ( USARSE SIEMPRE MOSTRAR MODIFICACIONES )
         private void CargarGridView()
         {
+            string orden = Session["orden"] != null ? Session["orden"].ToString() : "ASC";
+
             GestionProducto gestionProductos = new GestionProducto();
-            gvProductos.DataSource = gestionProductos.ObtenerTodosLosProductos(); // RETORNA UN DataTable
+            gvProductos.DataSource = gestionProductos.ObtenerProductosConOrden(orden); // RETORNA UN DataTable
             gvProductos.DataBind();
         }
 
@@ -79,6 +82,18 @@ namespace TP6_GRUPO_15
 
             gestionProducto.ActualizarProducto(producto);
             gvProductos.EditIndex = -1;
+            CargarGridView();
+        }
+
+        protected void btnOrdenarDescendente_Click(object sender, EventArgs e)
+        {
+            Session["orden"] = "DESC";
+            CargarGridView();
+        }
+
+        protected void btnRestablecerOrden_Click(object sender, EventArgs e)
+        {
+            Session["orden"] = "ASC";
             CargarGridView();
         }
     }

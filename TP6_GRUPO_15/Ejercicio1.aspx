@@ -27,6 +27,17 @@
         .auto-style6 {
             height: 40px;
         }
+        .auto-style7 {
+            height: 40px;
+            width: 190px;
+        }
+        .auto-style8 {
+            width: 190px;
+        }
+        .auto-style9 {
+            height: 23px;
+            width: 190px;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +48,7 @@
                     <td class="auto-style5">
                         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Productos"></asp:Label>
                     </td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style7"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
@@ -92,7 +103,7 @@
                 <RowStyle BorderColor="#0066CC" ForeColor="#0066CC" />
             </asp:GridView>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -100,7 +111,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:Button ID="btnOrdenarDescendente" runat="server" OnClick="btnOrdenarDescendente_Click" Text="Orden descendente" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -108,7 +121,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style9">
+                        <asp:Button ID="btnRestablecerOrden" runat="server" OnClick="btnRestablecerOrden_Click" Text="Restablecer orden" />
+                    </td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
@@ -116,7 +131,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -124,7 +139,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

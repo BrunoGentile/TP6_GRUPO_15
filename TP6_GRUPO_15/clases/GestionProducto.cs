@@ -30,10 +30,14 @@ namespace TP6_GRUPO_15.clases
             return dataSet.Tables[nombreTabla];
         }
 
-        public DataTable ObtenerTodosLosProductos()
+        public DataTable ObtenerProductosConOrden(string orden)
         {
-            return ObtenerTabla("productos", "SELECT * FROM Productos");
+            return ObtenerTabla("productos", "SELECT * FROM Productos ORDER BY IdProducto " + orden);
         }
+        //public DataTable ObtenerTodosLosProductos()
+        //{
+        //    return ObtenerTabla("productos", "SELECT * FROM Productos");
+        //}
 
         // MÉTODO UTILIZADO PARA ELIMINAR LOS PRODUCTOS DE LA BASE DE DATOS
         public void EliminarProducto(int IDProducto)
