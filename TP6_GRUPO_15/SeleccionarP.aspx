@@ -68,7 +68,7 @@
                         <asp:Label ID="lblSeleccioandos" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="hlVolverInicio" runat="server">Volver al inicio</asp:HyperLink>
+                        <asp:HyperLink ID="hlVolverInicio" runat="server" NavigateUrl="~/Ejercicio2Inicio.aspx">Volver al inicio</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

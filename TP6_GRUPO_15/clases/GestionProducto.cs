@@ -27,6 +27,8 @@ namespace TP6_GRUPO_15.clases
             
             sqlDataAdapter.Fill(dataSet, nombreTabla);
 
+            datos.ObtenerConexion().Close(); // CIERRO LA CONEXIÓN
+
             return dataSet.Tables[nombreTabla];
         }
 
@@ -54,6 +56,7 @@ namespace TP6_GRUPO_15.clases
 
             // EJECUTAR CONSULTA
             SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
+            conexion.ObtenerConexion().Close(); // CIERRO LA CONEXIÓN
         }
 
         // MÉTODO PARA ACTUALIZAR PRODUCTO EN LA BASE DE DATOS
@@ -74,6 +77,7 @@ namespace TP6_GRUPO_15.clases
 
             // EJECUTAR CONSULTA
             SQLCommand.ExecuteNonQuery(); // USADO PARA INSERT, UPDATE, DELETE
+            conexion.ObtenerConexion().Close(); // CIERRO LA CONEXIÓN
         }
     }
 }

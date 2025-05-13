@@ -60,7 +60,7 @@
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style11">
-                        <asp:HyperLink ID="hlSeleccionarProductos" runat="server">Seleccionar Productos</asp:HyperLink>
+                        <asp:HyperLink ID="hlSeleccionarProductos" runat="server" NavigateUrl="~/SeleccionarP.aspx">Seleccionar Productos</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -76,7 +76,7 @@
                     <td class="auto-style10">
                     </td>
                     <td class="auto-style11">
-                        <asp:HyperLink ID="hlMostrarProductos" runat="server">Mostrar Productos</asp:HyperLink>
+                        <asp:HyperLink ID="hlMostrarProductos" runat="server" NavigateUrl="~/MostrarP.aspx">Mostrar Productos</asp:HyperLink>
                     </td>
                 </tr>
             </table>
