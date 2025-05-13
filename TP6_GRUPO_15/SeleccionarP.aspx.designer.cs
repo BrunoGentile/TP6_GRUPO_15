@@ -11,7 +11,7 @@ namespace TP6_GRUPO_15
 {
 
 
-    public partial class SeleccionarP
+    public partial class MostrarP
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace TP6_GRUPO_15
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control gvProductosSeleccionados.
+        /// Control gvMostrarProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProductosSeleccionados;
+        protected global::System.Web.UI.WebControls.GridView gvMostrarProductos;
 
         /// <summary>
         /// Control lblSeleccioandos.
@@ -42,12 +42,12 @@ namespace TP6_GRUPO_15
         protected global::System.Web.UI.WebControls.Label lblSeleccioandos;
 
         /// <summary>
-        /// Control hlVolverInicio.
+        /// Control Hl_volverAlIncio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlVolverInicio;
+        protected global::System.Web.UI.WebControls.HyperLink Hl_volverAlIncio;
     }
 }
