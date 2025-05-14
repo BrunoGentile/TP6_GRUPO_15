@@ -15,12 +15,7 @@ namespace TP6_GRUPO_15
 
         }
 
-        protected void gvProductosSeleccionados_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvProductosSeleccionados.PageIndex = e.NewPageIndex;
-            // CargarGridView();
-        }
-
+        
         protected void gvProductosSeleccionados_SelectedIndexChanged(object sender, EventArgs e)
         {
 

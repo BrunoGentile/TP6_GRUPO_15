@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:GridView ID="gvProductosSeleccionados" runat="server" AllowPaging="True" OnPageIndexChanging="gvProductosSeleccionados_PageIndexChanging" PageSize="14" AutoGenerateColumns="False" BorderColor="#0099FF" ForeColor="#0066CC" OnSelectedIndexChanged="gvProductosSeleccionados_SelectedIndexChanged">
+                        <asp:GridView ID="gvProductosSeleccionados" runat="server" PageSize="14" AutoGenerateColumns="False" BorderColor="#0099FF" ForeColor="#0066CC">
                             <Columns>
                                 <asp:TemplateField HeaderText="IdProducto">
                                     <ItemTemplate>
@@ -122,13 +122,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style7">&nbsp;</td>

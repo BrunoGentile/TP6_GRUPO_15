@@ -68,7 +68,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:GridView ID="gvMostrarProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvMostrarProductos_SelectedIndexChanged" OnSelectedIndexChanging="gvMostrarProductos_SelectedIndexChanging" PageSize="14" Width="504px">
+                        <asp:GridView ID="gvMostrarProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvMostrarProductos_SelectedIndexChanged" OnSelectedIndexChanging="gvMostrarProductos_SelectedIndexChanging" PageSize="14" Width="504px" OnPageIndexChanging="gvMostrarProductos_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Producto">
                                     <ItemTemplate>

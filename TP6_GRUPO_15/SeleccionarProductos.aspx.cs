@@ -55,5 +55,11 @@ namespace TP6_GRUPO_15
         {
 
         }
+
+        protected void gvMostrarProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMostrarProductos.PageIndex = e.NewPageIndex;
+            CargarGridView();
+        }
     }
  }
