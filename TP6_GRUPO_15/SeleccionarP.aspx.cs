@@ -16,6 +16,8 @@ namespace TP6_GRUPO_15
             {
                 Session["orden"] = "ASC"; // Orden por defecto
                 CargarGridView();
+                Session["productosSeleccionados"] = new List<Productos>();
+                lblSeleccioandos.Text = "Productos agregados: ";
             }
         }
 
@@ -31,11 +33,21 @@ namespace TP6_GRUPO_15
 
         protected void gvMostrarProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            // OBTENCIÓN DE LOS VALORES DE LOS CAMPOS DEL PRODUCTO SELECCIONADO:
-            string idProducto = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProducto")).Text;
+            int idProducto = Convert.ToInt32(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProducto")).Text);
             string nombreProducto = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_NombreProducto")).Text;
-            string idProveedor = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text;
-            string precioUnitario = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnitario")).Text;
+            string proveedor = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text; 
+            decimal precioUnitario = Convert.ToDecimal(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnitario")).Text);
+
+            List<Productos> productos = Session["productosSeleccionados"] as List<Productos>;
+
+            if (!productos.Any(p => p.Id == idProducto))
+            {
+                productos.Add(new Productos(idProducto, nombreProducto, proveedor, precioUnitario));
+            }
+
+            Session["productosSeleccionados"] = productos;
+
+            lblSeleccioandos.Text = "Productos agregados: " + string.Join(" - ", productos.Select(p => p.Nombre_Producto));
 
         }
 
