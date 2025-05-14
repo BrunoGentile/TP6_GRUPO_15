@@ -38,6 +38,17 @@
             height: 21px;
             width: 454px;
         }
+        .auto-style10 {
+            width: 112px;
+        }
+        .auto-style11 {
+            height: 23px;
+            width: 112px;
+        }
+        .auto-style12 {
+            height: 21px;
+            width: 112px;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +59,7 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
                         &nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -58,7 +69,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -102,7 +113,7 @@
                             <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -112,7 +123,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -124,7 +135,7 @@
                     <td class="auto-style8">
                         <asp:Label ID="lblSeleccioandos" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style11">
                         <asp:HyperLink ID="Hl_volverAlIncio" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver al Incio</asp:HyperLink>
                     </td>
                     <td class="auto-style4"></td>
@@ -136,7 +147,7 @@
                 <tr>
                     <td class="auto-style5"></td>
                     <td class="auto-style9"></td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
@@ -145,8 +156,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7">
+                        <asp:Button ID="BTN_IDDESC" runat="server" OnClick="BTN_IDDESC_Click" Text="Ordenar por ID descendente" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="BTR_Restart" runat="server" OnClick="BTR_Restart_Click" Text="Restablecer Orden" />
+                    </td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -156,7 +171,7 @@
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style8"></td>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style11"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>

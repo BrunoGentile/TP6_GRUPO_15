@@ -61,5 +61,17 @@ namespace TP6_GRUPO_15
             gvMostrarProductos.PageIndex = e.NewPageIndex;
             CargarGridView();
         }
+
+        protected void BTN_IDDESC_Click(object sender, EventArgs e)
+        {
+            Session["orden"] = "DESC"; // ORDEN DESCENDENTE
+            CargarGridView();
+        }
+
+        protected void BTR_Restart_Click(object sender, EventArgs e)
+        {
+            Session["orden"] = "ASC"; // ORDEN POR DEFECTO
+            CargarGridView();
+        }
     }
  }

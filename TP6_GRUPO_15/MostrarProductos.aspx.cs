@@ -15,10 +15,5 @@ namespace TP6_GRUPO_15
 
         }
 
-        
-        protected void gvProductosSeleccionados_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
