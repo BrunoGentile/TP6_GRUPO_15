@@ -13,5 +13,16 @@ namespace TP6_GRUPO_15
         {
 
         }
+
+        //método para eliminar productos seleccionados
+        protected void btnEliminarSeleccionados_Click(object sender, EventArgs e)
+        {
+            if (Session["productosSeleccionados"] != null)
+            {
+                Session["productosSeleccionados"] = null;
+
+               
+            }
+        }
     }
 }

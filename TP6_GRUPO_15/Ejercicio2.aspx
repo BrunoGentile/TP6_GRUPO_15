@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2.aspx.cs" Inherits="TP6_GRUPO_15.Inicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2.aspx.cs" Inherits="TP6_GRUPO_15.Ejercicio2Inicio" %>
 
 <!DOCTYPE html>
 
@@ -68,7 +68,7 @@
                     <td class="auto-style13">
                     </td>
                     <td class="auto-style14">
-                        <asp:LinkButton ID="lbEliminarProductos" runat="server">Eliminar Productos seleccionados</asp:LinkButton>
+                        <asp:LinkButton ID="lbEliminarProductos" runat="server" OnClick="btnEliminarSeleccionados_Click">Eliminar Productos seleccionados</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>
