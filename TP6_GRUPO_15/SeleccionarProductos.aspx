@@ -161,7 +161,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="BTR_Restart" runat="server" OnClick="BTR_Restart_Click" Text="Restablecer Orden" />
                     </td>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style10">
+                        <asp:Button ID="btnOrdenarPrecio" runat="server" OnClick="btnOrdenarPrecio_Click" Text="Ordenar por Precio" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

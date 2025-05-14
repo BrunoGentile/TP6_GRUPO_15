@@ -36,6 +36,10 @@ namespace TP6_GRUPO_15.clases
         {
             return ObtenerTabla("productos", "SELECT * FROM Productos ORDER BY IdProducto " + orden);
         }
+        public DataTable ObtenerProductosPorPrecio(string Precio)
+        {
+            return ObtenerTabla("productos", "SELECT * FROM Productos ORDER BY PrecioUnidad " + Precio);
+        }
         //public DataTable ObtenerTodosLosProductos()
         //{
         //    return ObtenerTabla("productos", "SELECT * FROM Productos");

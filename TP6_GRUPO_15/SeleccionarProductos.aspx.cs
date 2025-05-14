@@ -15,7 +15,9 @@ namespace TP6_GRUPO_15
         {
             if (Page.IsPostBack == false)
             {
+
                 Session["orden"] = "ASC"; // Orden por defecto
+                Session["Precio"] = "DESC";
                 CargarGridView();
                 
                 if (Session["productosSeleccionados"] == null)
@@ -102,6 +104,14 @@ namespace TP6_GRUPO_15
         {
             Session["orden"] = "ASC"; // ORDEN POR DEFECTO
             CargarGridView();
+        }
+
+        protected void btnOrdenarPrecio_Click(object sender, EventArgs e)
+        {
+            string Precio = Session["Precio"] != null ? Session["Precio"].ToString() : "ASC";
+            GestionProducto gestionProductos = new GestionProducto();
+            gvMostrarProductos.DataSource = gestionProductos.ObtenerProductosPorPrecio(Precio); // RETORNA UN DataTable
+            gvMostrarProductos.DataBind();
         }
     }
  }
