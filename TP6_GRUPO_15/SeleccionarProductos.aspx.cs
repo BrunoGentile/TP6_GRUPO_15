@@ -46,28 +46,37 @@ namespace TP6_GRUPO_15
         {
             int idProducto = Convert.ToInt32(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProducto")).Text);
             string nombreProducto = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_NombreProducto")).Text;
-            string proveedor = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text;
+            int proveedor = Convert.ToInt32(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text);
             decimal precioUnitario = Convert.ToDecimal(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnitario")).Text);
 
+            
             DataTable productos = Session["productosSeleccionados"] as DataTable;
-
-            // Verificar si ya está (por ID)
-            bool existe = productos.AsEnumerable().Any(row => row.Field<int>("Id") == idProducto);
-
-            if (!existe)
+            // Si la tabla existe pero no tiene la columna "IdProducto", se asume que está mal creada
+            // o si directamente es null, se crea una nueva tabla con la estructura correcta
+            if (productos == null || !productos.Columns.Contains("IdProducto"))
             {
-                DataRow nuevaFila = productos.NewRow();
-                nuevaFila["Id"] = idProducto;
-                nuevaFila["Nombre_Producto"] = nombreProducto;
-                nuevaFila["Cant_x_Unidad"] = proveedor; // campo usado para proveedor
-                nuevaFila["Precio_Unidad"] = precioUnitario;
-                productos.Rows.Add(nuevaFila);
+                productos = new DataTable();
+                // Define las columnas que va a tener la tabla
+                productos.Columns.Add("IdProducto", typeof(int));
+                productos.Columns.Add("NombreProducto", typeof(string));
+                productos.Columns.Add("IdProveedor", typeof(int));
+                productos.Columns.Add("PrecioUnidad", typeof(decimal));
             }
 
+            // Verificar si ya está (por ID)
+            bool existe = productos.AsEnumerable().Any(row => row.Field<int>("IdProducto") == idProducto);
+
+            // Si el producto no está en la tabla, se agrega una nueva fila
+            if (!existe)
+            {
+                productos.Rows.Add(idProducto, nombreProducto, proveedor, precioUnitario);
+            }
+
+            // Se guarda la tabla actualizada en la sesión
             Session["productosSeleccionados"] = productos;
 
-            // Actualizar Label
-            var nombres = productos.AsEnumerable().Select(r => r.Field<string>("Nombre_Producto"));
+            // Genera un texto con los nombres de todos los productos seleccionados
+            var nombres = productos.AsEnumerable().Select(r => r.Field<string>("NombreProducto"));
             lblSeleccioandos.Text = "Productos agregados: " + string.Join(" - ", nombres);
 
         }

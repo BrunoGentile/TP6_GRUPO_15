@@ -14,7 +14,16 @@ namespace TP6_GRUPO_15
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
 
+                if (Session["productosSeleccionados"] != null)
+                {
+                    GestionProducto gestionProducto = new GestionProducto();
+                    gvProductosSeleccionados.DataSource = Session["productosSeleccionados"];
+                    gvProductosSeleccionados.DataBind();
+                }
+            }
         }
     }
 }

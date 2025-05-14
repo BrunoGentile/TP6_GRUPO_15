@@ -13,6 +13,7 @@ namespace TP6_GRUPO_15.clases
         private string _Nombre_Producto;
         private string _Cant_x_Unidad;
         private decimal _Precio_Unidad;
+        private int _proveedor;
 
         //CONSTRUCTORES
         public Productos() 
@@ -26,6 +27,13 @@ namespace TP6_GRUPO_15.clases
             _Nombre_Producto = Nombre_Producto;
             _Cant_x_Unidad = Cant_x_Unidad;
             _Precio_Unidad=Precio_Unidad;
+        }
+        public Productos(int Id, string Nombre_Producto,int Proveedor, decimal Precio_Unidad)
+        {
+            _Id = Id;
+            _Nombre_Producto = Nombre_Producto;
+            _proveedor = Proveedor;
+            _Precio_Unidad = Precio_Unidad;
         }
 
         // SETTERS Y GETTERS
@@ -48,6 +56,11 @@ namespace TP6_GRUPO_15.clases
         {
             get { return _Precio_Unidad; }
             set { _Precio_Unidad = value;}
+        }
+        public int proveedor
+        {
+            get { return _proveedor; }
+            set { _proveedor = value;}
         }
     }
 }
