@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,7 +17,17 @@ namespace TP6_GRUPO_15
             {
                 Session["orden"] = "ASC"; // Orden por defecto
                 CargarGridView();
-                Session["productosSeleccionados"] = new List<Productos>();
+                
+                if (Session["productosSeleccionados"] == null)
+                {
+                    DataTable tablaSeleccionados = new DataTable();
+                    tablaSeleccionados.Columns.Add("Id", typeof(int));
+                    tablaSeleccionados.Columns.Add("Nombre_Producto", typeof(string));
+                    tablaSeleccionados.Columns.Add("Cant_x_Unidad", typeof(string));
+                    tablaSeleccionados.Columns.Add("Precio_Unidad", typeof(decimal));
+                    Session["productosSeleccionados"] = tablaSeleccionados;
+                }
+
                 lblSeleccioandos.Text = "Productos agregados: ";
             }
         }
@@ -35,19 +46,29 @@ namespace TP6_GRUPO_15
         {
             int idProducto = Convert.ToInt32(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProducto")).Text);
             string nombreProducto = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_NombreProducto")).Text;
-            string proveedor = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text; 
+            string proveedor = ((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text;
             decimal precioUnitario = Convert.ToDecimal(((Label)gvMostrarProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnitario")).Text);
 
-            List<Productos> productos = Session["productosSeleccionados"] as List<Productos>;
+            DataTable productos = Session["productosSeleccionados"] as DataTable;
 
-            if (!productos.Any(p => p.Id == idProducto))
+            // Verificar si ya está (por ID)
+            bool existe = productos.AsEnumerable().Any(row => row.Field<int>("Id") == idProducto);
+
+            if (!existe)
             {
-                productos.Add(new Productos(idProducto, nombreProducto, proveedor, precioUnitario));
+                DataRow nuevaFila = productos.NewRow();
+                nuevaFila["Id"] = idProducto;
+                nuevaFila["Nombre_Producto"] = nombreProducto;
+                nuevaFila["Cant_x_Unidad"] = proveedor; // campo usado para proveedor
+                nuevaFila["Precio_Unidad"] = precioUnitario;
+                productos.Rows.Add(nuevaFila);
             }
 
             Session["productosSeleccionados"] = productos;
 
-            lblSeleccioandos.Text = "Productos agregados: " + string.Join(" - ", productos.Select(p => p.Nombre_Producto));
+            // Actualizar Label
+            var nombres = productos.AsEnumerable().Select(r => r.Field<string>("Nombre_Producto"));
+            lblSeleccioandos.Text = "Productos agregados: " + string.Join(" - ", nombres);
 
         }
 
