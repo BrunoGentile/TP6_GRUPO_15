@@ -80,7 +80,18 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style4">
+                        <asp:HyperLink ID="Hl_volverAlIncio" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver al Incio</asp:HyperLink>
+                    </td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                </tr>
+                <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

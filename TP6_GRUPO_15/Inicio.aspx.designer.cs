@@ -13,13 +13,23 @@ namespace TP6_GRUPO_15
 
     public partial class Inicio
     {
-        /// <summary>  
-        /// Control LBL_GroupNumb.  
-        /// </summary>  
-        /// <remarks>  
-        /// Campo generado automáticamente.  
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.  
-        /// </remarks>  
+
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+     //   protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// Control LBL_GroupNumb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBL_GroupNumb;
 
         /// <summary>  
