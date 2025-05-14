@@ -15,22 +15,9 @@ namespace TP6_GRUPO_15
         {
             if (Page.IsPostBack == false)
             {
-
                 Session["orden"] = "ASC"; // Orden por defecto
                 Session["Precio"] = "DESC";
                 CargarGridView();
-                
-                if (Session["productosSeleccionados"] == null)
-                {
-                    DataTable tablaSeleccionados = new DataTable();
-                    tablaSeleccionados.Columns.Add("Id", typeof(int));
-                    tablaSeleccionados.Columns.Add("Nombre_Producto", typeof(string));
-                    tablaSeleccionados.Columns.Add("Cant_x_Unidad", typeof(string));
-                    tablaSeleccionados.Columns.Add("Precio_Unidad", typeof(decimal));
-                    Session["productosSeleccionados"] = tablaSeleccionados;
-                }
-
-                lblSeleccioandos.Text = "Productos agregados: ";
             }
         }
 
