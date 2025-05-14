@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SeleccionarP.aspx.cs" Inherits="TP6_GRUPO_15.MostrarP" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SeleccionarProductos.aspx.cs" Inherits="TP6_GRUPO_15.MostrarP" %>
 
 <!DOCTYPE html>
 
@@ -125,7 +125,7 @@
                         <asp:Label ID="lblSeleccioandos" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="Hl_volverAlIncio" runat="server" NavigateUrl="~/Ejercicio2Inicio.aspx">Volver al Incio</asp:HyperLink>
+                        <asp:HyperLink ID="Hl_volverAlIncio" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver al Incio</asp:HyperLink>
                     </td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
