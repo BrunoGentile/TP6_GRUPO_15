@@ -48,7 +48,30 @@
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:GridView ID="gvProductosSeleccionados" runat="server" AllowPaging="True" OnPageIndexChanging="gvProductosSeleccionados_PageIndexChanging" PageSize="14">
+                        <asp:GridView ID="gvProductosSeleccionados" runat="server" AllowPaging="True" OnPageIndexChanging="gvProductosSeleccionados_PageIndexChanging" PageSize="14" AutoGenerateColumns="False" BorderColor="#0099FF" ForeColor="#0066CC" OnSelectedIndexChanged="gvProductosSeleccionados_SelectedIndexChanged">
+                            <Columns>
+                                <asp:TemplateField HeaderText="IdProducto">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_idProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="NombreProducto">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_NombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="IdProveedor">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_idProveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="PrecioUnidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_it_PrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <HeaderStyle BackColor="#000099" BorderColor="#0066CC" BorderStyle="Solid" ForeColor="#CCCCFF" />
                         </asp:GridView>
                     </td>
                     <td class="auto-style2">&nbsp;</td>
